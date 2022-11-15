@@ -1,0 +1,10 @@
+Cette api permet de creer une todolist de la personnaliser.
+
+
+Libraries:
+  - express,
+  - jsonwebtoken,
+  - bcrypt,
+
+Base de données:
+  - Mongodb
