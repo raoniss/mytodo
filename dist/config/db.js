@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fermer = exports.db = exports.connect = void 0;
+exports.fermer = exports.db = exports.connect = exports.client = void 0;
 const mongodb_1 = require("mongodb");
-let client;
 const connect = (url, cb) => {
-    if (client === null) {
-        client = new mongodb_1.MongoClient(url);
-        client.connect((err) => {
+    if (exports.client === null) {
+        exports.client = new mongodb_1.MongoClient(url);
+        exports.client.connect((err) => {
             if (err) {
-                client = null;
+                exports.client = null;
                 cb(err);
             }
             else {
@@ -22,14 +21,14 @@ const connect = (url, cb) => {
 };
 exports.connect = connect;
 const db = () => {
-    let db = new mongodb_1.Db(client, "dbOk");
+    let db = new mongodb_1.Db(exports.client, "dbOk");
     return db;
 };
 exports.db = db;
 const fermer = () => {
-    if (client) {
-        client.close();
-        client = null;
+    if (exports.client) {
+        exports.client.close();
+        exports.client = null;
     }
 };
 exports.fermer = fermer;
