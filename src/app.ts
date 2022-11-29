@@ -2,13 +2,14 @@ import express, { Application, Request, Response } from "express";
 import { connect } from "./config/db";
 const app: Application = express();
 const port = process.env.PORT || 3000;
+require ('dotenv').config()
 
 //Used middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("hello word")
+    res.send(process.env.ACCESS_TOKEN)
 });
 
 connect(

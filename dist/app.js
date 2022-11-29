@@ -7,11 +7,12 @@ const express_1 = __importDefault(require("express"));
 const db_1 = require("./config/db");
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
+require('dotenv').config();
 //Used middleware
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
 app.get("/", (req, res) => {
-    res.send("hello word");
+    res.send(process.env.ACCESS_TOKEN);
 });
 (0, db_1.connect)("mongodb+srv://aniss:KwgdWLslzHlqzypG@clusterniss.dzoumty.mongodb.net/?retryWrites=true&w=majority", (err) => {
     if (err) {

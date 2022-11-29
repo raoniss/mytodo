@@ -3,6 +3,7 @@ import { Utilisateur } from "../model/Utilisateur";
 import { client } from "../config/db";
 import { ObjectID } from "bson";
 
+
 export const sigin = async (req: Request, res: Response) => {
   let utilisateur = new Utilisateur(req.body.name, req.body.password);
   try {
@@ -16,9 +17,7 @@ export const sigin = async (req: Request, res: Response) => {
   }
 };
 
-export const login = (req: Request, res: Response) => {
-    // let utilisateur = new Utilisateur(req.body.name, req.body.password);
-};
+
 
 export const deleteuser = async (req: Request, res: Response) => {
   try {

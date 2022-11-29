@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.listtodo = exports.deletetodo = exports.updatetodo = exports.addtodo = exports.updateuser = exports.deleteuser = exports.login = exports.sigin = void 0;
+exports.listtodo = exports.deletetodo = exports.updatetodo = exports.addtodo = exports.updateuser = exports.deleteuser = exports.sigin = void 0;
 const Utilisateur_1 = require("../model/Utilisateur");
 const db_1 = require("../config/db");
 const bson_1 = require("bson");
@@ -27,10 +27,6 @@ const sigin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.sigin = sigin;
-const login = (req, res) => {
-    // let utilisateur = new Utilisateur(req.body.name, req.body.password);
-};
-exports.login = login;
 const deleteuser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let id = new bson_1.ObjectID(req.params.id);
